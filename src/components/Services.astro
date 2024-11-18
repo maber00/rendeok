@@ -1,12 +1,15 @@
 ---
+import { Image } from 'astro:assets';
+import oswaldoImage from '../assets/Oswaldo-Vega.webp';
 ---
-<div class="services-container relative min-h-screen bg-black text-white md:px-[100px] px-6  py-[50px]">
+
+<div class="services-container relative min-h-screen bg-black text-white md:px-[100px] px-6 py-[50px]">
     <div class="info-block w-full max-w-7xl mx-auto">
         <!-- Imagen Superior Centrada -->
         <div class="flex justify-center mb-16">
             <div class="w-[200px] h-[200px] overflow-hidden rounded-lg">
-                <img 
-                    src="/src/assets/Oswaldo-Vega.webp"
+                <Image 
+                    src={oswaldoImage}
                     alt="Oswaldo Vega"
                     class="w-full h-full object-cover"
                 />
