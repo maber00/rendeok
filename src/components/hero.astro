@@ -1,9 +1,9 @@
 ---
 import Carrusel from "../components/BrandsCarousel.astro";
 ---
-<div class="hero-container relative w-full min-h-screen overflow-visible bg-black">
+<div class="hero-container relative w-full min-h-screen overflow-hidden bg-black px-4 py-16 sm:py-28">
   <!-- Video Background con overlay inicial negro -->
-  <div class="absolute inset-0 w-[400%] md:w-full h-[180%] opacity-0 -left-[25%] md:left-0 z-0 scale-110" id="videoWrapper">
+  <div class="absolute inset-0 w-[300%] md:w-full h-[100%] opacity-0 z-0" id="videoWrapper">
     <div style="padding:56.25% 0 0 0;position:relative;">
         <iframe 
             src="https://player.vimeo.com/video/417275834?h=c1cd283147&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
@@ -22,16 +22,16 @@ import Carrusel from "../components/BrandsCarousel.astro";
     <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm opacity-0 z-20" id="textOverlay"></div>
 
     <!-- Contenido -->
-    <div class="relative z-30 flex flex-col items-center  text-white container mx-auto max-w-6xl py-28">
+    <div class="relative z-30 flex flex-col items-center text-white container mx-auto max-w-6xl">
         <!-- Contenedor superior con el contenido principal -->
         <div class="flex-1 flex flex-col items-center justify-center">
             <!-- RENDER con split animation -->
-            <h1 class="md:text-[200px] text-8xl font-black leading-none tracking-tight overflow-hidden">
+            <h1 class="text-6xl sm:text-8xl md:text-[200px] font-black leading-none tracking-tight overflow-hidden text-center">
                 <span class="inline-block render-text">RENDER</span>
             </h1>
             
             <!-- PRODUCCIÓN AUDIOVISUAL -->
-            <p class="text-4xl font-black text-center production-text opacity-0">
+            <p class="text-2xl sm:text-4xl font-black text-center production-text opacity-0 mt-4">
                 PRODUCCIÓN AUDIOVISUAL
             </p>
             
@@ -50,8 +50,8 @@ import Carrusel from "../components/BrandsCarousel.astro";
             </button>
             
         </div>
-        <div class="w-screen relative z-40 pt-20 pb-28">
-            <h2 class="text-xl font-regular  text-center text-white relative z-[60] will-change-opacity opacity-0 desc-text">
+        <div class="w-screen relative z-40 py-16 sm:pt-20 sm:pb-28">
+            <h2 class="text-xl font-regular mb-8 text-center text-white relative z-[60] will-change-opacity opacity-0 desc-text">
                 Proyectos exitosos, relaciones duraderas:
             </h2>
             <div class="relative z-40">
@@ -64,14 +64,13 @@ import Carrusel from "../components/BrandsCarousel.astro";
     <!-- Modal -->
 <!-- Modal -->
 
-<!-- Modal -->
 <div id="videoModal" class="fixed inset-0 z-[70] hidden bg-black/90">
-    <div class="relative w-full h-full flex items-center justify-center p-4 pt-28">
-        <div class="relative w-full max-w-6xl mt-12">
+    <div class="relative w-full h-full flex items-center justify-center p-4">
+        <div class="relative w-full max-w-6xl">
             <!-- Botón de cierre -->
             <button 
                 id="closeModal" 
-                class="absolute -top-16 right-4 text-white hover:text-red-500 transition-colors duration-300 text-6xl z-[80]"
+                class="absolute -top-12 right-0 text-white hover:text-red-500 transition-colors duration-300 text-6xl z-[80]"
                 aria-label="Cerrar modal"
             >
                 ×
