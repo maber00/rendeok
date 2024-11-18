@@ -1,0 +1,108 @@
+---
+---
+<div class="services-container relative min-h-screen bg-black text-white md:px-[100px] px-6  py-[50px]">
+    <div class="info-block w-full max-w-7xl mx-auto">
+        <!-- Imagen Superior Centrada -->
+        <div class="flex justify-center mb-16">
+            <div class="w-[200px] h-[200px] overflow-hidden rounded-lg">
+                <img 
+                    src="/src/assets/Oswaldo-Vega.webp"
+                    alt="Oswaldo Vega"
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        </div>
+
+        <!-- Contenido de Texto -->
+        <div class="space-y-16 max-w-5xl mx-auto">
+            <p class="text-2xl leading-relaxed opacity-0 transform translate-y-10" id="intro-text">
+                Hola, gracias por tomarte un tiempo para saber de nosotros, soy 
+                <span class="font-semibold text-white">Oswaldo Vega</span> 
+                productor de medios audiovisuales en 
+                <span class="font-semibold">RENDER PRODUCCION AUDIOVISUAL</span>, 
+                tengo más de 20 años de experiencia.
+            </p>
+
+            <p class="text-2xl leading-relaxed opacity-0 transform translate-y-10">
+                Y junto con mi equipo hemos tenido el lujo de trabajar para grandes compañías como 
+                <span class="text-[#B1293E] font-semibold">
+                    QUALA, ALIANZA TEAM, BEIERSDORF, CONSTRUCTORA COLPATRIA, MUY, HENKEL, GRUPO DIANA, COLOMBINA, ALPINA, RAMO
+                </span>
+                entre otros y con orgullo te puedo afirmar que nos hemos convertido en sus aliados estratégicos.
+            </p>
+
+            <p class="text-2xl leading-relaxed opacity-0 transform translate-y-10">
+                Mi compromiso no solo es solo producir con pasión y creatividad: 
+                <span class="font-semibold">Comerciales, Videos, Tomas Aéreas, Animaciones y Fotografía Publicitaria</span>. 
+                Mi compromiso es que estos productos audiovisuales te ayuden a 
+                <span class="font-semibold">Vender más</span> 
+                y también 
+                <span class="font-semibold">Capacitar, Motivar y Comunicar</span> 
+                a los empleados de tu compañía.
+            </p>
+
+            <button class=" bg-white text-black text-2xl font-bold  px-2 py-0 rounded opacity-0 transform translate-y-10 hover:bg-[#922232] transition-all duration-300">
+                ESCRIBEME, ME ENCANTARÍA SABER CUAL ES TU SIGUIENTE RESTO AUDIOVISUAL 
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Esperar a que el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+        // Timeline principal
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.services-container',
+                start: 'top center',
+                end: 'center center',
+                markers: true, // Para debug, luego lo quitamos
+            }
+        });
+
+        // Secuencia de animaciones
+        tl.fromTo('.services-container img', 
+            {
+                scale: 0.8,
+                opacity: 0
+            },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1
+            }
+        )
+        .fromTo('.services-container p', 
+            {
+                y: 30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                stagger: 0.2
+            },
+            '-=0.5'
+        )
+        .fromTo('.services-container button',
+            {
+                y: 30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8
+            },
+            '-=0.3'
+        );
+    });
+</script>
+

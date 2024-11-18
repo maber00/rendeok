@@ -1,53 +1,211 @@
 ---
-import { Picture } from "astro:assets";
-import heroImage from "assets/hero.png";
-import Link from "@components/ui/link.astro";
-import { Icon } from "astro-icon/components";
+import Carrusel from "../components/BrandsCarousel.astro";
 ---
-
-<main
-  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
-  <div class="py-6 md:order-1 hidden md:block">
-    <Picture
-      src={heroImage}
-      alt="Astronaut in the air"
-      widths={[200, 400, 600]}
-      sizes="(max-width: 800px) 100vw, 620px"
-      loading="eager"
-      format="avif"
-    />
-  </div>
-  <div>
-    <h1
-      class="text-5xl lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
-      Marketing website done with Astro
-    </h1>
-    <p class="text-lg mt-4 text-slate-600 max-w-xl">
-      Astroship is a starter template for startups, marketing websites & landing
-      pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly
-      create any website with this starter.
-    </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-      <Link
-        href="#"
-        href="https://web3templates.com/templates/astroship-starter-website-template-for-astro"
-        target="_blank"
-        class="flex gap-1 items-center justify-center"
-        rel="noopener">
-        <Icon class="text-white w-5 h-5" name="bx:bxs-cloud-download" />
-
-         Download for Free
-      </Link>
-      <Link
-        size="lg"
-        style="outline"
-        rel="noopener"
-        href="https://github.com/surjithctly/astroship"
-        class="flex gap-1 items-center justify-center"
-        target="_blank">
-        <Icon class="text-black w-4 h-4" name="bx:bxl-github" />
-         GitHub Repo
-      </Link>
+<div class="hero-container relative w-full h-screen overflow-hidden bg-black">
+  <!-- Video Background con overlay inicial negro -->
+<div class="absolute inset-0 w-[400%] md:w-full h-full opacity-0 -left-[25%] md:left-0" id="videoWrapper">
+    <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe 
+            src="https://player.vimeo.com/video/417275834?h=c1cd283147&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+        ></iframe>
     </div>
-  </div>
-</main>
+</div>
+
+    <!-- Overlay negro que se desvanece -->
+    <div class="absolute inset-0 bg-black transition-opacity duration-1000" id="initialOverlay"></div>
+
+    <!-- Overlay negro permanente para el texto -->
+    <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm opacity-0" id="textOverlay"></div>
+
+    <!-- Contenido -->
+    <div class="relative z-10 flex pt-28 flex-col items-center justify-between h-full text-white px-4 container mx-auto max-w-6xl">
+        <!-- Contenedor superior con el contenido principal -->
+        <div class="flex-1 flex flex-col items-center justify-center">
+            <!-- RENDER con split animation -->
+            <h1 class="md:text-[200px] text-8xl font-black leading-none tracking-tight overflow-hidden">
+                <span class="inline-block render-text">RENDER</span>
+            </h1>
+            
+            <!-- PRODUCCIÓN AUDIOVISUAL -->
+            <p class="text-4xl font-black text-center production-text opacity-0">
+                PRODUCCIÓN AUDIOVISUAL
+            </p>
+            
+            <!-- Texto descriptivo -->
+            <p class="text-xl font-normal max-w-2xl text-center mb-12 desc-text opacity-0">
+                Productora de comerciales, video marketing, tomas aéreas y fotografía publicitaria.
+            </p>
+            
+            <!-- Botón -->
+            <button 
+                id="showreelBtn"
+                class="relative overflow-hidden px-8 py-3 text-lg font-medium rounded-lg bg-green-500 text-white transition-all duration-300 group opacity-0 button-text"
+            >
+                <span class="relative z-10">SHOWREEL</span>
+                <div class="absolute inset-0 bg-green-600 transform translate-y-full transition-transform duration-300 group-hover:translate-y-0"></div>
+            </button>
+            
+        </div>
+
+        <div class="w-full  z-40">
+            <h2 class="text-xl font-regular mt-20  text-center text-white relative z-[60] will-change-opacity opacity-0 desc-text">
+                Proyectos exitosos, relaciones duraderas:
+            </h2>
+            <Carrusel class="z-40" />
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="videoModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex items-center justify-center">
+        <div class="relative w-full max-w-6xl mx-auto p-4">
+            <button id="closeModal" class="absolute -top-10 right-4 text-white text-4xl">&times;</button>
+            <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe 
+                    src="https://player.vimeo.com/video/417275834?h=c1cd283147"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    frameborder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @import 'https://player.vimeo.com/api/player.js';
+
+    .hero-container {
+        will-change: transform;
+    }
+
+    .group:hover .transform {
+        transform: translateY(0);
+    }
+
+    .render-text span {
+        will-change: transform, opacity;
+    }
+
+    .production-text,
+    .desc-text,
+    .button-text {
+        transform: translateY(20px);
+        will-change: transform, opacity;
+        opacity: 0;
+    }
+
+    /* Estilos específicos para el carrusel */
+    .brands-carousel {
+        mask-image: linear-gradient(
+            to right,
+            transparent,
+            black 10%,
+            black 90%,
+            transparent
+        );
+    }
+</style>
+
+<script>
+    import { gsap } from 'gsap';
+
+    // Timeline original para las animaciones de texto
+    const textTl = gsap.timeline();
+    
+    // Split text animation para RENDER
+    const text = document.querySelector('.render-text');
+    if (text instanceof HTMLElement && text.textContent) {
+        const chars = text.textContent.split('');
+        text.textContent = '';
+        chars.forEach((char) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.opacity = '0';
+            span.style.display = 'inline-block';
+            span.style.transform = 'translateY(100%)';
+            text.appendChild(span);
+        });
+
+        textTl
+            .to('.render-text span', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: 'power4.out'
+            })
+            .to('.production-text', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.4')
+            .to('.desc-text', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.6')
+            .to('.button-text', {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.6');
+    }
+
+    // Timeline para el video y overlays
+    const videoTl = gsap.timeline();
+    videoTl
+        .to('#videoWrapper', {
+            opacity: 1,
+            duration: 1.5,
+            ease: 'power2.inOut'
+        })
+        .to('#textOverlay', {
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.inOut'
+        }, '-=1')
+        .to('#initialOverlay', {
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut'
+        }, '-=1');
+
+    // Funcionalidad del modal
+    const showreelBtn = document.getElementById('showreelBtn');
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+
+    if (showreelBtn && videoModal && closeModal) {
+        showreelBtn.addEventListener('click', () => {
+            videoModal.classList.remove('hidden');
+            gsap.from(videoModal, {
+                opacity: 0,
+                duration: 0.3
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            gsap.to(videoModal, {
+                opacity: 0,
+                duration: 0.3,
+                onComplete: () => {
+                    videoModal.classList.add('hidden');
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) {
+                closeModal.click();
+            }
+        });
+    }
+</script>

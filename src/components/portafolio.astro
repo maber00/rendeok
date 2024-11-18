@@ -1,0 +1,508 @@
+---
+const projects = [
+    {
+        id: 1,
+        img: "/src/assets/portafolio/1-Aceite-Gourmet-500x500.webp",
+        title: "Comercial Aceite Gourmet - Alianza Team",
+        tags: ["Comerciales"],
+        videoUrl: "https://www.youtube.com/watch?v=sTFBwbuUmOU"
+        
+    },
+    {
+        id: 2,
+        img: "/src/assets/portafolio/Bonice-Rotoscopia-500x50.webp",
+        title: "ROTOSCOPIA – BONICE",
+        tags: ["Comerciales"],
+        videoUrl: "https://www.youtube.com/watch?v=70fK2Odcw0A"
+    },
+    {
+        id: 3,
+        img: "/src/assets/portafolio/Fondo-Lukafe-500x500.webp",
+        title: "Comercial Lukafe - Casa Luker",
+        tags: ["Comerciales"],
+        videoUrl: "https://www.youtube.com/watch?v=qTGbghkJBQM",
+
+    },
+    {
+        id: 4,
+        img: "/src/assets/portafolio/Fondo-Bioexpert-500x500.webp",
+        title: "Comercial Bioexpert Promo - Motion Graphics",
+        tags: ["Comerciales"],
+        videoUrl: "https://www.youtube.com/watch?v=ICE1dRRTCoc"
+    },
+    {
+        id: 5,
+        img: "/src/assets/portafolio/4-Reel-Video-Corporativo-500x500.webp",
+        title: "Video Corporativo Render Producción Audiovisual",
+        tags: ["Video"],
+        videoUrl: "https://www.youtube.com/watch?v=2w-ODG_VRsI"
+    },
+    {
+        id: 6,
+        img: "/src/assets/portafolio/Fondo-Reel-Motion-Graphics-500x500.webp",
+        title: "Reel Motion Graphics - Render Producción Audiovisual",
+        tags: ["Video"],
+        videoUrl: "https://www.youtube.com/watch?v=1NThrbQxYlc"
+    },
+    {
+        id: 7,
+        img: "/src/assets/portafolio/tomas-aereas-cartagena-500x500.webp",
+        title: "Tomas aéreas Colombia y Ecuador",
+        tags: ["Video"],
+        videoUrl: "https://www.youtube.com/watch?v=uLxfxWjWjMk"
+    },
+    {
+        id: 8,
+        img: "/src/assets/portafolio/Fondo-detras-de-camaras-500x500.webp",
+        title: "Detrás de Cámaras Himno Quala México",
+        tags: ["Video"],
+        videoUrl: "https://www.youtube.com/watch?v=JDVYcn8NZGM&feature=emb_err_woyt"
+    },
+    {
+        id: 9,
+        img: "/src/assets/portafolio/Foto-Himnos-500x500.webp",
+        title: "Himno Quala México",
+        tags: ["Video"],
+        videoUrl: "https://www.youtube.com/watch?v=mOV6Hawz2kw"
+    },
+    {
+    id: 10,
+    img: "/src/assets/portafolio/Quala-Productos-2-1-500x500.webp",
+    title: "FOTOGRAFIA DE PRODUCTO QUALA",
+    tags: ["Fotografía de Producto"],
+    images: [
+      "/src/assets/portafolio/foto/Quala-Productos-1.webp",
+      "/src/assets/portafolio/foto/Quala-Productos-2-1.webp",
+      "/src/assets/portafolio/foto/Quala-Productos-3.webp"
+    ],
+    isGridItem: false
+  },
+  {
+    id: 11,
+    img: "/src/assets/portafolio/1-BDF-500x500.webp",
+    title: "FOTOGRAFIA DE PRODUCTO BDF",
+    tags: ["Fotografía de Producto"],
+    images: [
+      "/src/assets/portafolio/BDF/2-BDF.webp",
+      "/src/assets/portafolio/BDF/3-BDF-1.webp",
+      "/src/assets/portafolio/BDF/4-BDF.webp",
+      "/src/assets/portafolio/BDF/5-BDF.webp",
+      "/src/assets/portafolio/BDF/6-BDF.webp",
+      "/src/assets/portafolio/BDF/7-BDF.webp",
+      "/src/assets/portafolio/BDF/8-BDF.webp",
+      "/src/assets/portafolio/BDF/9-BDF.webp",
+      "/src/assets/portafolio/BDF/10-BDF.webp",
+      "/src/assets/portafolio/BDF/11-BDF.webp",
+      "/src/assets/portafolio/BDF/12-BDF.webp",
+      "/src/assets/portafolio/BDF/13-BDF.webp",
+      "/src/assets/portafolio/BDF/14-BDF.webp",
+      "/src/assets/portafolio/BDF/15-BDF.webp",
+      "/src/assets/portafolio/BDF/16-BDF.webp"
+    ],
+    isGridItem: true
+  },
+    {
+        id: 12,
+        img: "/src/assets/portafolio/Producto-Pomar-1-1-500x500.webp",
+        title: "FOTOGRAFIA DE PRODUCTO EL POMAR",
+        tags: ["Fotografía de Producto"],
+        images: [
+      "/src/assets/portafolio/foto/Producto-Pomar-1-1.webp",
+    ],
+    isGridItem: false
+    },
+    {
+        id: 13,
+        img: "/src/assets/portafolio/1-Nogales-500x500.webp",
+        title: "FOTOGRAFIA CORPORATIVA CLINICA LOS NOGALES",
+        tags: ["Fotografía Corporativa"],
+        images: [
+      "/src/assets/portafolio/foto/1-Nogales.webp",
+      "/src/assets/portafolio/foto/2-Nogales.webp", 
+      "/src/assets/portafolio/foto/8-Nogales.webp",
+      "/src/assets/portafolio/foto/9-Nogales.webp",
+      "/src/assets/portafolio/foto/10-Nogales.webp",
+      "/src/assets/portafolio/foto/5-Nogales.webp",
+      "/src/assets/portafolio/foto/6-Nogales.webp",
+      "/src/assets/portafolio/foto/11-Nogales.webp",
+    ],
+    isGridItem: true
+    },
+    {
+        id: 14,
+        img: "/src/assets/portafolio/Honor_2-500x500.webp",
+        title: "FOTOGRAFIA CORPORATIVA HONOR & LAUREL",
+        tags: ["Fotografía Corporativa"],
+        images: [
+      "/src/assets/portafolio/foto/Honor_1.webp",
+      "/src/assets/portafolio/foto/Honor_2.webp",
+    ],
+    isGridItem: true
+    },
+    {
+        id: 15,
+        img: "/src/assets/portafolio/2-Quala--500x500.webp",
+        title: "FOTOGRAFIA CORPORATIVA QUALA",
+        tags: ["Fotografía Corporativa"],
+        images: [
+      "/src/assets/portafolio/Quala/1-Quala-.webp",
+      "/src/assets/portafolio/Quala/2-Quala-.webp",
+      "/src/assets/portafolio/Quala/3-Quala.webp",
+      "/src/assets/portafolio/Quala/4-Quala.webp",
+      "/src/assets/portafolio/Quala/5-Quala.webp",
+      "/src/assets/portafolio/Quala/6-Quala.webp",
+      "/src/assets/portafolio/Quala/7-Quala.webp",
+      "/src/assets/portafolio/Quala/8-Quala.webp",
+      "/src/assets/portafolio/Quala/9-Quala.webp",
+      "/src/assets/portafolio/Quala/10-Quala.webp",
+      "/src/assets/portafolio/Quala/11-Quala.webp",
+      "/src/assets/portafolio/Quala/12-Quala.webp",
+      "/src/assets/portafolio/Quala/13-Quala.webp",
+      "/src/assets/portafolio/Quala/14-Quala.webp",
+      "/src/assets/portafolio/Quala/15-Quala.webp",
+      "/src/assets/portafolio/Quala/16-Quala.webp",
+      "/src/assets/portafolio/Quala/17-Quala.webp",
+      "/src/assets/portafolio/Quala/18-Quala.webp",
+      "/src/assets/portafolio/Quala/19-Quala.webp",
+      "/src/assets/portafolio/Quala/20-Quala.webp",
+      "/src/assets/portafolio/Quala/21-Quala.webp",
+      "/src/assets/portafolio/Quala/22-Quala.webp",
+      "/src/assets/portafolio/Quala/23-Quala.webp",
+      "/src/assets/portafolio/Quala/24-Quala.webp",
+      "/src/assets/portafolio/Quala/25-Quala.webp",
+      "/src/assets/portafolio/Quala/26-Quala.webp",
+      "/src/assets/portafolio/Quala/27-Quala.webp",
+      "/src/assets/portafolio/Quala/28-Quala.webp",
+      "/src/assets/portafolio/Quala/29-Quala.webp",
+      "/src/assets/portafolio/Quala/30-Quala.webp",
+    ],
+    isGridItem: true
+    },
+    {
+        id: 16,
+        img: "/src/assets/portafolio/Thomas_1-500x500.webp",
+        title: "THOMAS EXPRESS FOTOGRAFÍA CORPORATIVA",
+        tags: ["Fotografía Corporativa"],
+        images: [
+      "/src/assets/portafolio/Thomas/Thomas_1.webp",
+      "/src/assets/portafolio/Thomas/Thomas_2.webp",
+      "/src/assets/portafolio/Thomas/Thomas_3.webp",
+      "/src/assets/portafolio/Thomas/Thomas_4.webp",
+      "/src/assets/portafolio/Thomas/Thomas_8.webp",
+    ],
+    isGridItem: true
+    },
+    {
+        id: 17,
+        img: "/src/assets/portafolio/1-Casa-Anapoima-1-500x500.webp",
+        title: "FOTOGRAFIA INMOBILIARIA",
+        tags: ["Fotografía Inmobiliaria"],
+        images: [
+      "/src/assets/portafolio/Casa/1-Casa-Anapoima-1.webp",
+      "/src/assets/portafolio/Casa/2-Casa-Anapoima-2.webp",
+      "/src/assets/portafolio/Casa/3-Casa-Anapoima-3.webp",
+      "/src/assets/portafolio/Casa/5Torre-Amadeus-2.webp",
+      "/src/assets/portafolio/Casa/6-Gran-Casa-1.webp",
+      "/src/assets/portafolio/Casa/7.-Gran-Casa-2.webp",
+      "/src/assets/portafolio/Casa/8-Gran-Casa.webp",
+    ],
+    isGridItem: true
+    },
+];
+
+const tags = ["Todo", "Comerciales", "Fotografía Corporativa", "Fotografía de Producto", "Fotografía Inmobiliaria", "Video"];
+---
+
+<div class="portafolio-container min-h-screen px-4 md:px-8 lg:px-20 py-20 md:py-40 bg-black text-white " id="portfolio-section">
+    <!-- Título y Descripción -->
+    <div class="text-left">
+        <h2 class="text-5xl md:text-7xl lg:text-[150px] font-bold mb-2 leading-none transition-all">PORTAFOLIO</h2>
+        <div class="w-full md:w-800 h-0.5 bg-[#B1293E] scale-x-0 mb-2" id="underline"></div>
+        <p class="text-base md:text-xl mt-2 pb-10 md:pb-40 max-w-4xl">
+            Sabemos que el trabajo bien hecho, la pasión que le imprimimos a todos nuestros proyectos, 
+            la capacidad de actuar con dinamismo y un estilo visual impecable han sido la principal garantía de nuestro éxito.
+        </p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 mb-8 md:mb-12">
+        {tags.map(tag => (
+            <button 
+                class="tag-filter px-3 md:px-6 py-2 rounded text-sm md:text-base transition-colors duration-300 hover:bg-[#B1293E] whitespace-nowrap overflow-hidden text-ellipsis"
+                data-filter={tag}
+            >
+                {tag}
+            </button>
+        ))}
+    </div>
+
+    <!-- Grid de Proyectos -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-2 px-0 md:px-[50px] lg:px-[100px]">
+        {projects.map(project => (
+            <div 
+                class="project-item relative md:h-[250px] h-[150px] cursor-pointer group"
+                data-category={project.tags.join(',')}
+                data-title={project.title}
+                data-video-url={project.videoUrl}
+                data-images={project.images?.join(',')}
+
+                data-grid={String(project.isGridItem || false)}
+
+
+            >
+                <img 
+                    src={project.img}
+                    alt={project.title}
+                    class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300">
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span class="text-white text-lg md:text-xl font-medium">Ver Proyecto</span>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+
+    <!-- Modal Responsive -->
+    <div id="portfolioModal" class="modal fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/90">
+            <div class="flex flex-col lg:flex-row h-full items-center justify-center p-4 md:p-8 lg:p-[100px] gap-4 lg:gap-8 overflow-y-auto">
+                <!-- Carrusel de imágenes / Video container -->
+                <div class="w-full lg:w-2/3 aspect-video bg-black relative">
+                    <div id="carouselContainer" class="relative w-full h-full">
+    <div class="carousel w-full h-full relative overflow-hidden">
+        <div class="carousel-track w-full h-full flex transition-transform duration-500"></div>
+        <button class="carousel-prev absolute top-1/2 left-2 text-white">❮</button>
+        <button class="carousel-next absolute top-1/2 right-2 text-white">❯</button>
+    </div>
+    <!-- Miniaturas de imágenes -->
+    <div class="carousel-thumbnails mt-4 flex justify-center"></div>
+</div>
+
+                    <!-- Controles del carrusel -->
+                <button id="prevImage" class="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-2xl hidden">&lt;</button>
+                <button id="nextImage" class="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-2xl hidden">&gt;</button>
+                </div>
+                
+                <!-- Project info -->
+                <div class="w-full lg:w-1/3 text-white">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4" id="modalTitle">Título del Proyecto</h2>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-[#B1293E] rounded-full text-sm" id="modalTags">
+                            <!-- Tags will be injected here -->
+                        </span>
+                    </div>
+                    <p class="text-sm md:text-base" id="modalDescription">
+                        <!-- Description will be injected here -->
+                    </p>
+                </div>
+
+                <button id="closeModalBtn" class="absolute top-4 right-4 md:top-8 md:right-8 text-white text-4xl">&times;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .tag-filter {
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .tag-filter:hover, 
+    .tag-filter.active {
+        background-color: #B1293E;
+        transform: translateY(-2px);
+    }
+
+    #underline {
+        transform-origin: left;
+    }
+
+    .project-item {
+        visibility: hidden; /* Cambiamos opacity por visibility */
+    }
+
+    /* Animaciones para el modal */
+    .modal {
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .modal.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .modal:not(.hidden) {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+    
+    document.addEventListener('DOMContentLoaded', () => {
+       gsap.set(['#portfolio-section h2', '.tag-filter', '.project-item'], {
+           opacity: 0,
+           y: 100
+       });
+    
+       gsap.to('#portfolio-section h2', {
+           opacity: 1,
+           y: 0,
+           duration: 1,
+           ease: 'power3.out',
+           scrollTrigger: {
+               trigger: '#portfolio-section',
+               start: 'top center',
+               toggleActions: 'play none none reset'
+           }
+       });
+    
+       gsap.fromTo('#underline', { scaleX: 0 }, {
+           scaleX: 1,
+           duration: 1,
+           delay: 0.5,
+           ease: 'power3.out',
+           scrollTrigger: {
+               trigger: '#portfolio-section',
+               start: 'top center',
+               toggleActions: 'play none none reset'
+           }
+       });
+    
+       gsap.to('.tag-filter', {
+           opacity: 1,
+           y: 0,
+           duration: 0.8,
+           stagger: 0.1,
+           ease: 'power3.out',
+           scrollTrigger: {
+               trigger: '#portfolio-section',
+               start: 'top center',
+               toggleActions: 'play none none reset'
+           }
+       });
+    
+       gsap.to('.project-item', {
+           opacity: 1,
+           visibility: 'visible',
+           y: 0,
+           duration: 0.8,
+           stagger: { amount: 1, from: "start" },
+           ease: 'power3.out',
+           scrollTrigger: {
+               trigger: '.project-item',
+               start: 'top bottom-=100',
+               toggleActions: 'play none none reset'
+           }
+       });
+    
+       const modal = document.getElementById('portfolioModal');
+       const closeBtn = document.getElementById('closeModalBtn');
+       const filterButtons = document.querySelectorAll('.tag-filter');
+       const projectItems = document.querySelectorAll('.project-item');
+       const modalTitle = document.getElementById('modalTitle');
+       const modalTags = document.getElementById('modalTags');
+       const carouselContainer = document.getElementById('carouselContainer');
+    
+       function getYouTubeVideoId(url) {
+           const regex = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+           const match = url.match(regex);
+           return (match && match[2].length === 11) ? match[2] : null;
+       }
+    
+       filterButtons.forEach(button => {
+           button.addEventListener('click', () => {
+               const filterValue = button.getAttribute('data-filter') || 'Todo';
+    
+               filterButtons.forEach(btn => {
+                   btn.classList.remove('bg-[#B1293E]');
+               });
+               button.classList.add('bg-[#B1293E]');
+    
+               projectItems.forEach(item => {
+                   const categories = item.getAttribute('data-category')?.split(',') || [];
+                   const shouldShow = filterValue === 'Todo' || categories.includes(filterValue);
+                   item.classList.toggle('hidden', !shouldShow);
+               });
+           });
+       });
+    
+       if (modal && closeBtn && carouselContainer && modalTitle && modalTags) {
+           projectItems.forEach(item => {
+               item.addEventListener('click', () => {
+                   const title = item.getAttribute('data-title');
+                   const videoUrl = item.getAttribute('data-video-url');
+                   const images = item.getAttribute('data-images')?.split(',').filter(Boolean) || [];
+                   const categories = item.getAttribute('data-category');
+    
+                   modal.classList.remove('hidden');
+                   document.body.style.overflow = 'hidden';
+                   carouselContainer.innerHTML = '';
+    
+                   if (videoUrl) {
+                       const videoId = getYouTubeVideoId(videoUrl);
+                       if (videoId) {
+                           carouselContainer.innerHTML = `
+                               <div class="video-wrapper w-full h-full">
+                                   <iframe class="w-full h-full" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                               </div>
+                           `;
+                       }
+                   } else if (images.length > 0) {
+                       carouselContainer.innerHTML = `
+                           <div class="flex flex-col gap-8 w-full max-h-full p-4">
+                               <div id="mainImage" class="w-full h-[60vh]">
+                                   <img 
+                                       src="${images[0]}" 
+                                       alt="${title}"
+                                       class="w-full h-full object-contain"
+                                   />
+                               </div>
+                               <div class="grid grid-cols-3 gap-4">
+                                   ${images.map(img => `
+                                       <div class="w-full aspect-[4/3] cursor-pointer">
+                                           <img 
+                                               src="${img}" 
+                                               alt="${title}"
+                                               class="w-full h-full object-cover thumbnail-img"
+                                               onclick="document.querySelector('#mainImage img').src = '${img}'"
+                                           />
+                                       </div>
+                                   `).join('')}
+                               </div>
+                           </div>
+                       `;
+                   } else {
+                       carouselContainer.innerHTML = `
+                           <div class="w-full h-full bg-gray-800 flex items-center justify-center">
+                               <span class="text-white">Contenido no disponible</span>
+                           </div>
+                       `;
+                   }
+    
+                   if (modalTitle) modalTitle.textContent = title;
+                   if (modalTags) modalTags.textContent = categories;
+               });
+           });
+    
+           const closeModal = () => {
+               modal.classList.add('hidden');
+               document.body.style.overflow = '';
+               carouselContainer.innerHTML = '';
+           };
+    
+           closeBtn.addEventListener('click', closeModal);
+           modal.addEventListener('click', (e) => {
+               if (e.target === modal) closeModal();
+           });
+           document.addEventListener('keydown', (e) => {
+               if (e.key === 'Escape') closeModal();
+           });
+       }
+    });
+    </script>

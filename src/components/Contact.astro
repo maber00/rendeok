@@ -1,0 +1,114 @@
+<div class="min-h-screen bg-black relative flex flex-col">
+    <!-- Grid Layout -->
+    <div class="flex-grow">
+        <!-- CONTACT -->
+        <div class="p-4 md:p-[100px]  ">
+            <h2 class="text-4xl md:text-7xl md:text-[150px] text-white font-bold leading-none">CONTÁCTANOS</h2>
+            <div class="w-full md:w-800 h-0.5 bg-[#B1293E]  mb-2" id="underline"></div>
+            
+            <form class="p-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                    <div class="form-group">
+                        <input
+                            type="text"
+                            placeholder="Nombre Completo*"
+                            class="w-full bg-transparent border-b border-white py-2 focus:outline-none focus:border-red-600"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="email"
+                            placeholder="Email*"
+                            class="w-full bg-transparent border-b border-white py-2 focus:outline-none focus:border-red-600"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <input
+                            type="tel"
+                            placeholder="Teléfono*"
+                            class="w-full bg-transparent border-b border-white py-2 focus:outline-none focus:border-red-600"
+                        />
+                    </div>
+                    <div class="form-group md:col-span-2">
+                        <textarea
+                            placeholder="Mensaje"
+                            rows="4"
+                            class="w-full bg-transparent border-b border-white py-2 focus:outline-none focus:border-red-600"
+                        ></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="w-full mt-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-200 border-t border-gray-200">
+            <!-- Dirección -->
+            <div class="p-4 md:p-6 hover:bg-white text-white transition-colors">
+                <h3 class="font-light text-sm uppercase mb-2">DIRECCIÓN:</h3>
+                <p class="text-sm text-gray-600 text-white">Calle 98ª # 51-40 Bogotá – Colombia</p>
+            </div>
+            
+            <!-- Teléfono -->
+            <div class="p-4 md:p-6 hover:bg-white text-white transition-colors">
+                <h3 class="font-light text-sm uppercase mb-2">TELÉFONO:</h3>
+                <p class="text-sm text-gray-600 text-white ">+57 311 2572831</p>
+            </div>
+            
+            <!-- Email -->
+            <div class="p-4 md:p-6 hover:bg-white text-white transition-colors">
+                <h3 class="font-light text-sm uppercase mb-2">EMAIL:</h3>
+                <p class="text-sm text-gray-600 text-white ">produccion@render.co</p>
+            </div>
+            
+            <!-- Horario -->
+            <div class="p-4 md:p-6 hover:bg-white text-white transition-colors">
+                <h3 class="font-light text-sm uppercase mb-2">HORARIO:</h3>
+                <p class="text-sm text-gray-600 text-white">Lun-Vie 7am – 6pm</p>
+            </div>
+        </div>
+        
+        <!-- RENDER logo -->
+        <div class="text-center border-t border-gray-200 py-4 md:py-6">
+            <h2 class="text-xl md:text-2xl font-bold">RENDER</h2>
+        </div>
+    </div>
+</div>
+
+<style>
+    #underline {
+        transform-origin: left;
+    }
+    input, textarea {
+        font-weight: 300;
+    }
+    
+    input::placeholder, textarea::placeholder {
+        color: #999;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        transition: all 0.3s ease;
+    }
+</style>
+<script>
+    // Animación del underline
+    gsap.fromTo('#underline',
+            {
+                scaleX: 0
+            },
+            {
+                scaleX: 1,
+                duration: 1,
+                delay: 0.5,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '#portfolio-section',
+                    start: 'top center',
+                    toggleActions: 'play none none reset'
+                }
+            }
+        );
+</script>

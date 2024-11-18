@@ -1,19 +1,24 @@
-<footer class="my-20">
-  <p class="text-center text-sm text-slate-500">
-    Copyright © {new Date().getFullYear()} Astroship. All rights reserved.
-  </p>
-  <!--
-    Can we ask you a favor 🙏
-    Please keep this backlink on your website if possible.
-    or Purchase a commercial license from https://web3templates.com
-  -->
-  <p class="text-center text-xs text-slate-500 mt-1">
-    Made by <a
-      href="https://web3templates.com"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      Web3Templates
-    </a>
-  </p>
+---
+import { Image } from 'astro:assets';
+import LogoImage2 from "../assets/Logo/logo-Wondertech.webp";
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-black text-white py-6">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap items-center justify-between">
+      <!-- Contenedor para logo y botón -->
+      
+      
+      <!-- Copyright centrado debajo -->
+      <div class="w-full text-center">
+        <p class="text-sm text-white">
+          Copyright © {currentYear} We Are Wondertech. All rights reserved.
+        </p>
+        <p class="text-sm text-white">
+          Diseñado por <a href="https://okdaru.com" class="hover:underline">okdaru.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </footer>
