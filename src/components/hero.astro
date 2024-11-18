@@ -1,9 +1,9 @@
 ---
 import Carrusel from "../components/BrandsCarousel.astro";
 ---
-<div class="hero-container relative w-full h-screen overflow-hidden bg-black">
+<div class="hero-container relative w-full min-h-screen overflow-visible bg-black">
   <!-- Video Background con overlay inicial negro -->
-<div class="absolute inset-0 w-[400%] md:w-full h-full opacity-0 -left-[25%] md:left-0" id="videoWrapper">
+  <div class="absolute inset-0 w-[400%] md:w-full h-[180%] opacity-0 -left-[25%] md:left-0 z-0 scale-110" id="videoWrapper">
     <div style="padding:56.25% 0 0 0;position:relative;">
         <iframe 
             src="https://player.vimeo.com/video/417275834?h=c1cd283147&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
@@ -16,13 +16,13 @@ import Carrusel from "../components/BrandsCarousel.astro";
 </div>
 
     <!-- Overlay negro que se desvanece -->
-    <div class="absolute inset-0 bg-black transition-opacity duration-1000" id="initialOverlay"></div>
+    <div class="absolute inset-0 bg-black transition-opacity duration-1000 z-10" id="initialOverlay"></div>
 
     <!-- Overlay negro permanente para el texto -->
-    <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm opacity-0" id="textOverlay"></div>
+    <div class="absolute inset-0 bg-black bg-opacity-60 backdrop-blur-sm opacity-0 z-20" id="textOverlay"></div>
 
     <!-- Contenido -->
-    <div class="relative z-10 flex pt-28 flex-col items-center justify-between h-full text-white px-4 container mx-auto max-w-6xl">
+    <div class="relative z-30 flex flex-col items-center  text-white container mx-auto max-w-6xl py-28">
         <!-- Contenedor superior con el contenido principal -->
         <div class="flex-1 flex flex-col items-center justify-center">
             <!-- RENDER con split animation -->
@@ -50,23 +50,38 @@ import Carrusel from "../components/BrandsCarousel.astro";
             </button>
             
         </div>
-
-        <div class="w-full  z-40">
-            <h2 class="text-xl font-regular mt-20  text-center text-white relative z-[60] will-change-opacity opacity-0 desc-text">
+        <div class="w-screen relative z-40 pt-20 pb-28">
+            <h2 class="text-xl font-regular  text-center text-white relative z-[60] will-change-opacity opacity-0 desc-text">
                 Proyectos exitosos, relaciones duraderas:
             </h2>
-            <Carrusel class="z-40" />
+            <div class="relative z-40">
+            <Carrusel />
+            </div>
         </div>
     </div>
+</div>
 
     <!-- Modal -->
-    <div id="videoModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-90 flex items-center justify-center">
-        <div class="relative w-full max-w-6xl mx-auto p-4">
-            <button id="closeModal" class="absolute -top-10 right-4 text-white text-4xl">&times;</button>
-            <div style="padding:56.25% 0 0 0;position:relative;">
+<!-- Modal -->
+
+<!-- Modal -->
+<div id="videoModal" class="fixed inset-0 z-[70] hidden bg-black/90">
+    <div class="relative w-full h-full flex items-center justify-center p-4 pt-28">
+        <div class="relative w-full max-w-6xl mt-12">
+            <!-- Botón de cierre -->
+            <button 
+                id="closeModal" 
+                class="absolute -top-16 right-4 text-white hover:text-red-500 transition-colors duration-300 text-6xl z-[80]"
+                aria-label="Cerrar modal"
+            >
+                ×
+            </button>
+            
+            <!-- Contenedor del video -->
+            <div class="relative w-full" style="padding-top: 56.25%">
                 <iframe 
                     src="https://player.vimeo.com/video/417275834?h=c1cd283147"
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                    class="absolute top-0 left-0 w-full h-full"
                     frameborder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen
