@@ -1,26 +1,26 @@
 ---
-import { SEO } from "astro-seo";
-import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource-variable/inter/index.css";
-import '@fontsource-variable/bricolage-grotesque';
+import { SEO } from 'astro-seo';
+import Footer from '@components/footer.astro';
+import Navbar from '@components/navbar/navbar.astro';
+import '@fontsource/poppins/300.css';  // Light
+import '@fontsource/poppins/400.css';  // Regular
+import '@fontsource/poppins/500.css';  // Medium
+import '@fontsource/poppins/600.css';  // Semibold
+import '@fontsource/poppins/700.css';  // Bold
+import ogImage from "/src/assets/logo-render (1).webp"; 
+
+const ogImageUrl = new URL(ogImage.src, Astro.url.origin).toString(); 
 
 export interface Props {
   title: string;
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  "/opengraph.jpg",
-  Astro.site
-).toString();
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : Astro.url.pathname;
 
 const { title } = Astro.props;
-
-const makeTitle = title
-  ? title + " | Render"
-  : "Render - Productora de comerciales, video marketing, tomas aéreas y fotografía publicitaria";
+const pageTitle = title ? `${title} | Render Medios Audiovisuales` : 'Render Medios Audiovisuales';
 ---
 
 <!DOCTYPE html>
@@ -29,26 +29,44 @@ const makeTitle = title
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.svg">
     <meta name="generator" content={Astro.generator} />
-
+    
     <SEO
-      title={makeTitle}
-      description="Productora de comerciales, video marketing, tomas aéreas y fotografía publicitaria"
+      title={pageTitle}
+      description="PRODUCCIÓN AUDIOVISUAL - Productora de comerciales, video marketing, tomas aéreas y fotografía publicitaria."
       canonical={canonicalURL}
+      twitter={{
+        creator: "@rendermedios",
+        site: "@rendermedios", 
+        card: "summary_large_image"
+      }}
       openGraph={{
         basic: {
-          title: makeTitle,
+          url: canonicalURL,
           type: "website",
-          image: resolvedImageWithDomain,
-        }
+          title: `Render Medios Audiovisuales`,
+          image: ogImageUrl
+        },
+        image: {
+          alt: "Render Medios Audiovisuales",
+          width: 1200,
+          height: 630
+        },
       }}
     />
   </head>
   <body>
     <Navbar />
-    <main>
-      <slot />
-    </main>
+    <slot />
     <Footer />
+    <style is:global>
+      :root {
+        font-family: 'Poppins', sans-serif;
+      }
+      img {
+        content-visibility: auto;
+      }
+    </style>
   </body>
 </html>
